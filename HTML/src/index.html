@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
 	<meta charset="UTF-8">
 	<title>Gavião de almeida | Sociedade de Advogados</title>
@@ -8,7 +8,7 @@
 
 	<link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
 	<link href="https://unpkg.com/basscss@7.1.1/css/basscss.min.css" rel="stylesheet">
-	<style type="text/css">
+	<style >
 
 		p{
 			padding: 0 12px ;
@@ -75,18 +75,35 @@
 		.sticky .m-link{
 			width: 100%
 		}
+		.logo-link{
+			display: block;
+		}
+
+		.map-responsive{
+    overflow:hidden;
+    padding-bottom:56.25%;
+    position:relative;
+    height:0;
+}
+.map-responsive iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
 	</style>
 </head>
 <body>
 	<header>
-		<img loading="lazy" src="lib/Gaviao_de_almeida_logo.png" alt="logo da Gavião de Almeida sociedade de advogados">
+		<a href="#home" class="logo-link"><img loading="lazy" src="lib/Gaviao_de_almeida_logo.png" alt="logo da Gavião de Almeida sociedade de advogados"></a>
 	</header>
 	<nav id="main-menu" class="content">
 	
 		<ul class="m" itemscope itemtype="https://schema.org/SiteNavigationElement" role="menu">
-			<li class="m-item" itemprop="name" role="menuitem"><a class="m-link" itemprop="url" title="Sobre nós" href="#">Sobre</a>
-			<li class="m-item" itemprop="name" role="menuitem"><a class="m-link" itemprop="url" title="Quem Somos" href="#">Quem Somos</a>
-			<li class="m-item" itemprop="name" role="menuitem"><a class="m-link" itemprop="url" title="Contato" href="#">Contato</a>
+			<li class="m-item" itemprop="name" role="menuitem"><a href="#sobre" class="m-link" itemprop="url" title="Sobre nós">Sobre</a>
+			<li class="m-item" itemprop="name" role="menuitem"><a href="#quem-somos" class="m-link" itemprop="url" title="Quem Somos" >Quem Somos</a>
+			<!-- <li class="m-item" itemprop="name" role="menuitem"><a href="#contato" class="m-link" itemprop="url" title="Contato" >Contato</a> -->
 		</ul>
 	
 	</nav>
@@ -94,7 +111,7 @@
 	
 	<main >
 		<!-- Home -->
-		<section class="content">
+		<section id="home" class="content">
 			<p>
 				<img loading="lazy" src="lib/Escritorio_Gaviao_de_Almeida.jpg" alt="Foto do Escritório Gavião de Almeida e seus funcionários">
 			</p>
@@ -118,26 +135,8 @@
 		</section>
 	<!-- / Home -->
 
-	<!-- Quem Somos -->
-		<section class="content hide">
-			
-			<h1>Conheça os Serviços da Sociedade de advogados</h1>
-			<p>Situada no centro de Jundiaí, interior de São Paulo, desde 2007, a Gavião de Almeida Sociedade de Advogados atua em todo o território brasileiro e exterior, principalmente nas áreas Trabalhista, Tributário, Empresarial, Consumidor e Cível.</p>
-			<p>Nossos valores incluem, mas não se limitam a</p>
-			<ol>
-				<li> Confiabilidade: compromisso com a confiança de nossos clientes, buscando sempre honrar a crença de nossos cliente em nossos serviços, buscando as previsões mais conservadoras e lutando pelos melhores resultados</li>
-				<li> Trabalho em Equipe: buscamos ser uma sociedade coordenada e coesa para multiplicar o potencial de cada um e melhorar a qualidade dos serviços</li>
-				<li> Lealdade: adotamos como postura leal em relação a nossos clientes e terceiros de modo a  buscar solução equilibrada e segura seja no consultivo, seja no contencioso.</li>
-				<li> respeito à lei, à verdade ao ambiente que nos cerca.</li>
-			</ol>
-			<p>Nossa missão é prover atendimento personalizado sempre de acordo com a melhor orientação jurídica para a tomada de ações preventivas, corretivas ou contenciosas.</p>
-			<p>Pretendemos ser o melhor prestador de serviços em nosso segmento crescendo de maneira responsável em investindo na formação e melhoramento da nossa qualidade de prestação de serviços</p>
-		</section>
-
-	<!-- / Quem Somos -->
-
 	<!-- Sobre a Empresa -->
-		<section class="content hide">
+		<section id="sobre" class="content hide">
 			<h1>Sobre a Empresa</h1>
 			<h2>PROPOSTA DE ATENDIMENTO AO CLIENTE</h2>
 			<p>Antecipar conflitos e identificar as melhores soluções tanto na política das Relações de Trabalho quanto nas questões Societárias, Tributárias, Empresariais, Civis e do Consumidor Atuar de forma multidisciplinar, com competência técnica, atendimento eficaz e experiência comprovada de modo a exercer a melhor Assessoria na área preventiva e contenciosa.</p>
@@ -150,59 +149,62 @@
 				<li>Desenvolvimento de mecanismos para evitar passivos e minimizar conflitos</li>
 			</ul>
 			<h2>GAVIÃO DE ALMEIDA SOCIEDADE DE ADVOGADOS</h2>
-			<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7335.291115221914!2d-46.892767!3d-23.183133!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf2688ad08d31f%3A0xe3abf75f4b36be85!2sR.%20Cap.%20Cassiano%20Ricardo%20de%20Toledo%2C%20190%20-%20Centro%2C%20Jundia%C3%AD%20-%20SP%2C%2013201-840%2C%20Brasil!5e0!3m2!1spt-BR!2sus!4v1590002017448!5m2!1spt-BR!2sus" width="800" height="600" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+			<div class="map-responsive">
+    		<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7335.291115221914!2d-46.892767!3d-23.183133!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf2688ad08d31f%3A0xe3abf75f4b36be85!2sR.%20Cap.%20Cassiano%20Ricardo%20de%20Toledo%2C%20190%20-%20Centro%2C%20Jundia%C3%AD%20-%20SP%2C%2013201-840%2C%20Brasil!5e0!3m2!1spt-BR!2sus!4v1590002017448!5m2!1spt-BR!2sus" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+			</div>
 		</section>
 	<!-- / Sobre a Empresa --> 
 
 	<!-- Quem Somos -->
-		<section class="content hide">
-			<h2>Quem somos</h2>
+		<section id="quem-somos" class="content hide">
+			<h1>Quem somos</h1>
 			<p>Conheça nossos advogados</p>
+			<div class="clearfix">
+				<div class="col sm-col-6 md-col-4">
+					<h2>Dr. Roque Jr. Gimenes Ferreira</h2>
+					<p>OAB-SP 117981</p>
+					<img loading="lazy" src="lib/Dr_Roque_Jr_Gimenes_Ferreira.jpg" alt="Dr. Roque Jr. Gimenes Ferreira">
+					<p>Advogado especialista com Mestrado em Direito do Trabalho e especialização em Direito Tributário, destaca-se pela atuação em grandes escritórios de São Paulo até 2011, quando da fundação da Gavião de Almeida e pelo trabalho junto a multinacionais e grandes empresas nacionais, sempre apontando teses seguras e atualizadas, seja para a adoção de procedimentos preventivos, seja na defesa judicial dos interesses dos clientes. </p>
+					<p>Professor de Direito dos cursos de Pós-graduação em direito e processo do trabalho da UNINOVE.</p>
+				</div>
 
-			<div>
-				<h3>Dr. Roque Jr. Gimenes Ferreira</h3>
-				<p>OAB-SP 117981</p>
-				<img loading="lazy" src="lib/Dr_Roque_Jr_Gimenes_Ferreira.jpg" alt="Dr. Roque Jr. Gimenes Ferreira">
-				<p>Advogado especialista com Mestrado em Direito do Trabalho e especialização em Direito Tributário, destaca-se pela atuação em grandes escritórios de São Paulo até 2011, quando da fundação da Gavião de Almeida e pelo trabalho junto a multinacionais e grandes empresas nacionais, sempre apontando teses seguras e atualizadas, seja para a adoção de procedimentos preventivos, seja na defesa judicial dos interesses dos clientes. </p>
-				<p>Professor de Direito dos cursos de Pós-graduação em direito e processo do trabalho da UNINOVE.</p>
-			</div>
+				<div class="col sm-col-6 md-col-4">
+					<h2>Dr. Robinson G. Ferreira</h2>
+					<p>OAB-SP 403960</p>
+					<img loading="lazy" src="lib/Dr_Robinson_G_Ferreira.jpg" alt="Dr. Robinson G. Ferreira">
+					<p>Graduado pela Faculdade de Direito Padre Anchieta em 1999, formado também em Administração de Empresas pela APMBB com pós graduação em Segurança Pública e Contenção de Calamidades pela JICA (Japão), e engenheiro graduado pela Faculdade Pitágoras em 2018.</p>
+					<p>Atua na área cível com foco no atendimento a pessoa jurídica e na área trabalhista.</p>
+				</div>
 
-			<div>
-				<h3>Dr. Robinson G. Ferreira</h3>
-				<p>OAB-SP 403960</p>
-				<img loading="lazy" src="lib/Dr_Robinson_G_Ferreira.jpg" alt="Dr. Robinson G. Ferreira">
-				<p>Graduado pela Faculdade de Direito Padre Anchieta em 1999, formado também em Administração de Empresas pela APMBB com pós graduação em Segurança Pública e Contenção de Calamidades pela JICA (Japão), e engenheiro graduado pela Faculdade Pitágoras em 2018.</p>
-				<p>Atua na área cível com foco no atendimento a pessoa jurídica e na área trabalhista.</p>
-			</div>
+				<div class="col sm-col-6 md-col-4">
+					<h2>Dra. Júlia Drezza</h2>
+					<p>OAB-SP 403954</p>
+					<img loading="lazy" src="lib/Dra_Julia_Drezza.jpg" alt="Dra. Júlia Drezza">
+					<p>Graduada pela Faculdade de Direito Padre Anchieta de Jundiaí em 2016, atua principalmente na área trabalhista e cível, com enfoque nos ramos empresarial e de família e sucessões.</p>
+					<p>Atua pelo convênio com a Defensoria Pública do Estado de São Paulo para atender pessoas carentes.</p>
+				</div>
 
-			<div>
-				<h3>Dra. Júlia Drezza</h3>
-				<p>OAB-SP 403954</p>
-				<img loading="lazy" src="lib/Dra_Julia_Drezza.jpg" alt="Dra. Júlia Drezza">
-				<p>Graduada pela Faculdade de Direito Padre Anchieta de Jundiaí em 2016, atua principalmente na área trabalhista e cível, com enfoque nos ramos empresarial e de família e sucessões.</p>
-				<p>Atua pelo convênio com a Defensoria Pública do Estado de São Paulo para atender pessoas carentes.</p>
-			</div>
-
-			<div>
-				<h3>Dra. Stephânia Vilela Matias</h3>
-				<p>OAB-SP 392173</p>
-				<img loading="lazy" src="lib/Dra_Stephania_Vilela_Matias.jpg" alt="Dra. Stephânia Vilela Matias">
-				<p>Graduada na faculdade PUC-Campinas em 2016, especializada em direito do trabalho pela faculdade Anchieta em 2019.</p>
-				<p> Atuação principal na área trabalhista empresarial.</p>
-			</div>
-			
-			<div>
-				<h3>Cristiano Fogaça</h3>
-				<p>Paralegal </p>
-				<img loading="lazy" src="lib/Cristiano_Fogaca.jpg" alt="Cristiano Fogaça">
-				<p>Bacharel em direito pela Faculdade de Direito Padre Anchieta. Ampla atuação na área comercial, tendo experiência logística e de negociação de 
-				contratos.</p>
+				<div class="col sm-col-6 md-col-4">
+					<h2>Dra. Stephânia Vilela Matias</h2>
+					<p>OAB-SP 392173</p>
+					<img loading="lazy" src="lib/Dra_Stephania_Vilela_Matias.jpg" alt="Dra. Stephânia Vilela Matias">
+					<p>Graduada na faculdade PUC-Campinas em 2016, especializada em direito do trabalho pela faculdade Anchieta em 2019.</p>
+					<p> Atuação principal na área trabalhista empresarial.</p>
+				</div>
+				
+				<div class="col sm-col-6 md-col-4">
+					<h2>Cristiano Fogaça</h2>
+					<p>Paralegal </p>
+					<img loading="lazy" src="lib/Cristiano_Fogaca.jpg" alt="Cristiano Fogaça">
+					<p>Bacharel em direito pela Faculdade de Direito Padre Anchieta. Ampla atuação na área comercial, tendo experiência logística e de negociação de 
+					contratos.</p>
+				</div>
 			</div>
 		</section>
 	<!-- /Quem Somos -->
 
 	<!-- Contato -->
-	<section class="content hide">
+	<section id="contato" class="content hide">
 		<h1> Fale Conosco </h1>
 	</section>
 	<!-- /Contato -->
@@ -230,6 +232,23 @@
     }
 		// or for modern browsers
 	}, { capture: false, passive: true });
+
+	navButtons = document.querySelectorAll("a[href*='#']");
+	for (var i = 0; i < navButtons.length; i++) {
+		navButtons[i].addEventListener('click', function(e){
+			e.preventDefault();
+			var sections = document.querySelectorAll('section');
+			for (var i = 0; i < sections.length; i++) {
+				sections[i].classList.add('hide');
+			}
+			var target = e.target; 
+			var href = (target.getAttribute('href')) ? target.getAttribute('href') : target.closest('a').getAttribute('href') ; 
+
+			console.log(href);
+			document.querySelector(href).classList.remove('hide');
+			return false;
+		})
+	}
 	</script>
 </body>
 </html>
