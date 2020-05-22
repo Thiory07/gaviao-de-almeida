@@ -191,7 +191,85 @@ input:focus + label {
 	font-size: .5rem;
 	vertical-align: top;
 }
+
+/*Loading spinner*/
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #fff;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+
+.loading-screen{ 
+	position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,.5);
+  top: 0;
+  left: 0;
+  transition:  .2s all  ease;
+}
+.loading-screen .lds-ellipsis{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+}
+.loading-screen.disabled{ 
+	z-index: -1;
+	opacity: 0;
+	}
     </style>
+    <style link='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'></style>
   </head>
   <body>
     <header>
@@ -233,85 +311,7 @@ input:focus + label {
           </div>
         </div>
       </section>
-      <!-- / Home -->
-      <!-- Sobre a Empresa -->
-      <!-- <section id="sobre" class="content hide">
-        <div class="padding-8">
-          <h1>Sobre a Empresa</h1>
-          <h2>PROPOSTA DE ATENDIMENTO AO CLIENTE</h2>
-          <p>Antecipar conflitos e identificar as melhores soluções tanto na política das Relações de Trabalho quanto nas questões Societárias, Tributárias, Empresariais, Civis e do Consumidor.</p>
-          <p>Atuar de forma multidisciplinar, com competência técnica, atendimento eficaz e experiência comprovada de modo a exercer a melhor Assessoria na área preventiva e contenciosa.</p>
-          <h2>OBJETIVO</h2>
-          <p>Desenvolver trabalho jurídico de acordo com os mais rígidos princípios éticos, oferecendo: </p>
-          <ul>
-            <li>Serviços de Qualidade</li>
-            <li>Personalização do atendimento</li>
-            <li>Abrangência de áreas de atuação</li>
-            <li>Desenvolvimento de mecanismos para evitar passivos e minimizar conflitos</li>
-          </ul>
-          <h2>GAVIÃO DE ALMEIDA SOCIEDADE DE ADVOGADOS</h2>
-          <div class="map-responsive">
-            <iframe title="Localização da Gavião de Almeida Sociedade de advogados" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7335.291115221914!2d-46.892767!3d-23.183133!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf2688ad08d31f%3A0xe3abf75f4b36be85!2sR.%20Cap.%20Cassiano%20Ricardo%20de%20Toledo%2C%20190%20-%20Centro%2C%20Jundia%C3%AD%20-%20SP%2C%2013201-840%2C%20Brasil!5e0!3m2!1spt-BR!2sus!4v1590002017448!5m2!1spt-BR!2sus" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
-          </div>
-        </div>
-      </section>
- -->      <!-- / Sobre a Empresa --> 
-      <!-- Quem Somos -->
-      <!-- <section id="quem-somos" class="content hide">
-        <div class="padding-8">
-          <h1>Quem somos</h1>
-          <p>Conheça nossos advogados</p>
-        </div>
-        <div class="clearfix">
-          <div class="col sm-col-6 md-col-4 adv">
-            <div class="padding-8">
-              <h2>Dr. Roque Jr. Gimenes Ferreira</h2>
-              <p>OAB-SP 117981</p>
-              <div class="img-container"><img loading="lazy" src="lib/Dr_Roque_Jr_Gimenes_Ferreira.jpg" alt="Dr. Roque Jr. Gimenes Ferreira"></div>
-              <p>Advogado especialista com Mestrado em Direito do Trabalho e especialização em Direito Tributário, destaca-se pela atuação em grandes escritórios de São Paulo até 2011, quando da fundação da Gavião de Almeida e pelo trabalho junto a multinacionais e grandes empresas nacionais, sempre apontando teses seguras e atualizadas, seja para a adoção de procedimentos preventivos, seja na defesa judicial dos interesses dos clientes. </p>
-              <p>Professor de Direito dos cursos de Pós-graduação em direito e processo do trabalho da UNINOVE.</p>
-            </div>
-          </div>
-          <div class="col sm-col-6 md-col-4 adv">
-            <div class="padding-8">
-              <h2>Dr. Robinson G. Ferreira</h2>
-              <p>OAB-SP 403960</p>
-              <div class="img-container"><img loading="lazy" src="lib/Dr_Robinson_G_Ferreira.jpg" alt="Dr. Robinson G. Ferreira"></div>
-              <p>Graduado pela Faculdade de Direito Padre Anchieta em 1999, formado também em Administração de Empresas pela APMBB com pós graduação em Segurança Pública e Contenção de Calamidades pela JICA (Japão), e engenheiro graduado pela Faculdade Pitágoras em 2018.</p>
-              <p>Atua na área cível com foco no atendimento a pessoa jurídica e na área trabalhista.</p>
-            </div>
-          </div>
-          <div class="col sm-col-6 md-col-4 adv">
-            <div class="padding-8">
-              <h2>Dra. Júlia Drezza</h2>
-              <p>OAB-SP 403954</p>
-              <div class="img-container"><img loading="lazy" src="lib/Dra_Julia_Drezza.jpg" alt="Dra. Júlia Drezza"></div>
-              <p>Graduada pela Faculdade de Direito Padre Anchieta de Jundiaí em 2016, atua principalmente na área trabalhista e cível, com enfoque nos ramos empresarial e de família e sucessões.</p>
-              <p>Atua pelo convênio com a Defensoria Pública do Estado de São Paulo para atender pessoas carentes.</p>
-            </div>
-          </div>
-          <div class="col sm-col-6 md-col-4 adv">
-            <div class="padding-8">
-              <h2>Dra. Stephânia Vilela Matias</h2>
-              <p>OAB-SP 392173</p>
-              <div class="img-container"><img loading="lazy" src="lib/Dra_Stephania_Vilela_Matias.jpg" alt="Dra. Stephânia Vilela Matias"></div>
-              <p>Graduada na faculdade PUC-Campinas em 2016, especializada em direito do trabalho pela faculdade Anchieta em 2019.</p>
-              <p> Atuação principal na área trabalhista empresarial.</p>
-            </div>
-          </div>
-          <div class="col sm-col-6 md-col-4 adv">
-            <div class="padding-8">
-              <h2>Cristiano Fogaça</h2>
-              <p>Paralegal </p>
-              <div class="img-container"><img loading="lazy" src="lib/Cristiano_Fogaca.jpg" alt="Cristiano Fogaça"></div>
-              <p>Bacharel em direito pela Faculdade de Direito Padre Anchieta. Ampla atuação na área comercial, tendo experiência logística e de negociação de 
-                contratos.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section> -->
-      <!-- /Quem Somos -->
+      
     </main>
     <footer>
     	<div id="contato" class="content">
@@ -389,12 +389,14 @@ input:focus + label {
       		let target = e.target; 
       		let href = (target.getAttribute('href')) ? target.getAttribute('href') : target.closest('a').getAttribute('href') ; 
       		let sectionDOM = document.querySelector(href);
+
       		if(sectionDOM){sectionDOM.classList.remove('hide');}
       		else{
       			let url = 'chunks/'+href.replace("#","")+'.html';
       			console.log(url);
       			client.open('GET', url);
       			client.send();
+      			document.querySelector('.loading-screen').classList.remove('disabled')
       		}
       		return false;
       	});
@@ -404,10 +406,15 @@ input:focus + label {
       // Load chunks
       var client = new XMLHttpRequest();
 			
-			client.onreadystatechange = function() {
+			client.addEventListener("load", function(e) {
+				document.querySelector('.loading-screen').classList.add('disabled');
+				console.log(e);
 			  document.querySelector('main').innerHTML += client.responseText;
-			}
+			});
 			
     </script>
+    <div class="loading-screen disabled">
+    <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+    </div>
   </body>
 </html>
