@@ -22,8 +22,14 @@
       body, h1, h2, h3, h4, h5, h6{
       font-family: "Open Sans", sans-serif;
       }
-      footer{
-      	padding-bottom: 100px;
+      footer{padding-bottom: 100px;}
+      header{
+      	background-color: #030026;
+        text-align: center;
+       }
+      .logo-link img{
+				height: 150px;
+				padding: 16px 0;
       }
       .content{
       max-width: 1200px;
@@ -189,7 +195,9 @@ input:focus + label {
   </head>
   <body>
     <header>
-      <a href="#home" class="logo-link"><img loading="lazy" src="lib/Gaviao_de_almeida_logo.png" alt="logo da Gavião de Almeida sociedade de advogados"></a>
+    	<div class="padding-8">
+      	<a href="#home" class="logo-link"><img loading="lazy" src="lib/Gaviao_de_almeida_l.png" alt="logo da Gavião de Almeida sociedade de advogados" width="391" height="150"></a>
+      </div>
     </header>
     <nav id="main-menu" class="content">
       <ul class="m" itemscope itemtype="https://schema.org/SiteNavigationElement" role="menu">
@@ -227,7 +235,7 @@ input:focus + label {
       </section>
       <!-- / Home -->
       <!-- Sobre a Empresa -->
-      <section id="sobre" class="content hide">
+      <!-- <section id="sobre" class="content hide">
         <div class="padding-8">
           <h1>Sobre a Empresa</h1>
           <h2>PROPOSTA DE ATENDIMENTO AO CLIENTE</h2>
@@ -247,9 +255,9 @@ input:focus + label {
           </div>
         </div>
       </section>
-      <!-- / Sobre a Empresa --> 
+ -->      <!-- / Sobre a Empresa --> 
       <!-- Quem Somos -->
-      <section id="quem-somos" class="content hide">
+      <!-- <section id="quem-somos" class="content hide">
         <div class="padding-8">
           <h1>Quem somos</h1>
           <p>Conheça nossos advogados</p>
@@ -302,7 +310,7 @@ input:focus + label {
             </div>
           </div>
         </div>
-      </section>
+      </section> -->
       <!-- /Quem Somos -->
     </main>
     <footer>
@@ -380,14 +388,26 @@ input:focus + label {
       		}
       		let target = e.target; 
       		let href = (target.getAttribute('href')) ? target.getAttribute('href') : target.closest('a').getAttribute('href') ; 
-      
-      		document.querySelector(href).classList.remove('hide');
+      		let sectionDOM = document.querySelector(href);
+      		if(sectionDOM){sectionDOM.classList.remove('hide');}
+      		else{
+      			let url = 'chunks/'+href.replace("#","")+'.html';
+      			console.log(url);
+      			client.open('GET', url);
+      			client.send();
+      		}
       		return false;
       	});
       }
       // Input
  function mascaraMutuario(e,a){v_obj=e,v_fun=a,setTimeout("execmascara()",1)}function execmascara(){v_obj.value=v_fun(v_obj.value)}function cpfCnpj(e){return e=(e=e.replace(/\D/g,"")).length<=14?(e=(e=e.replace(/(\d{3})(\d)/,"$1.$2")).replace(/(\d{3})(\d)/,"$1.$2")).replace(/(\d{3})(\d{1,2})$/,"$1-$2"):(e=(e=(e=e.replace(/^(\d{2})(\d)/,"$1.$2")).replace(/^(\d{2})\.(\d{3})(\d)/,"$1.$2.$3")).replace(/\.(\d{3})(\d)/,".$1/$2")).replace(/(\d{4})(\d)/,"$1-$2")};
-      
+      // Load chunks
+      var client = new XMLHttpRequest();
+			
+			client.onreadystatechange = function() {
+			  document.querySelector('main').innerHTML += client.responseText;
+			}
+			
     </script>
   </body>
 </html>
