@@ -96,6 +96,89 @@
       padding-left: 16px;
       padding-right: 16px;
       }
+
+
+      /* Form */
+     /**
+* Make the field a flex-container, reverse the order so label is on top.
+*/
+ 
+.field {
+  display: flex;
+  flex-flow: column-reverse;
+  margin-bottom: 1em;
+}
+/**
+* Add a transition to the label and input.
+* I'm not even sure that touch-action: manipulation works on
+* inputs, but hey, it's new and cool and could remove the 
+* pesky delay.
+*/
+label, input {
+  transition: all 0.2s;
+  touch-action: manipulation;
+}
+
+input {
+	background-color: transparent;
+  font-size: 1.5em;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  font-family: inherit;
+  -webkit-appearance: none;
+  border-radius: 0;
+  padding: 0;
+  cursor: text;
+}
+
+input:focus {
+  outline: 0;
+  border-bottom: 1px solid #666;
+}
+
+label {
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+/**
+* Translate down and scale the label up to cover the placeholder,
+* when following an input (with placeholder-shown support).
+* Also make sure the label is only on one row, at max 2/3rds of the
+* field—to make sure it scales properly and doesn't wrap.
+*/
+input:placeholder-shown + label {
+  cursor: text;
+  max-width: 66.66%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transform-origin: left bottom;
+  transform: translate(0, 2.125rem) scale(1.5);
+}
+/**
+* By default, the placeholder should be transparent. Also, it should 
+* inherit the transition.
+*/
+::-webkit-input-placeholder {
+  opacity: 0;
+  transition: inherit;
+}
+/**
+* Show the placeholder when the input is focused.
+*/
+input:focus::-webkit-input-placeholder {
+  opacity: 1;
+}
+/**
+* When the element is focused, remove the label transform.
+* Also, do this when the placeholder is _not_ shown, i.e. when 
+* there's something in the input at all.
+*/
+input:not(:placeholder-shown) + label,
+input:focus + label {
+  transform: translate(0, 0) scale(1);
+  cursor: pointer;
+}
     </style>
   </head>
   <body>
@@ -215,9 +298,35 @@
       </section>
       <!-- /Quem Somos -->
       <!-- Contato -->
-      <section id="contato" class="content hide">
+      <section id="contato" class="content ">
         <div class="padding-8">
           <h1> Fale Conosco </h1>
+          <!-- modify this form HTML and place wherever you want your form -->
+
+<form
+  action="https://formspree.io/xdowavgd"
+  method="POST"
+>
+<div class="field">
+    <input type="text" name="Nome" id="fullname" placeholder="Exemplo: Roque Jr">
+    <label for="fullname">Nome</label>
+  </div>
+  
+  <div class="field">
+    <input type="email" name="email" id="email" placeholder="contato@exemplo.com">
+    <label for="email">Email</label>
+  </div>
+
+  <div class="field">
+  	<input type="tel" name="CPF-CNPJ" id="CPF-CNPJ" placeholder="000.000.000-00" onkeypress="mascaraMutuario(this,cpfCnpj)">
+  	<label for="CPF-CNPJ">CPF</label>
+  </div>
+  <div class="field">
+  	<input type="tel" name="telefone" id="telefone" placeholder="(DDD) 0000-0000">
+  	<label for="telefone">Telefone</label>
+  </div>
+  <button type="submit">Enviar</button>
+</form>
         </div>
       </section>
       <!-- /Contato -->
@@ -266,7 +375,8 @@
       		return false;
       	})
       }
-      
+      // Input
+ function mascaraMutuario(e,a){v_obj=e,v_fun=a,setTimeout("execmascara()",1)}function execmascara(){v_obj.value=v_fun(v_obj.value)}function cpfCnpj(e){return e=(e=e.replace(/\D/g,"")).length<=14?(e=(e=e.replace(/(\d{3})(\d)/,"$1.$2")).replace(/(\d{3})(\d)/,"$1.$2")).replace(/(\d{3})(\d{1,2})$/,"$1-$2"):(e=(e=(e=e.replace(/^(\d{2})(\d)/,"$1.$2")).replace(/^(\d{2})\.(\d{3})(\d)/,"$1.$2.$3")).replace(/\.(\d{3})(\d)/,".$1/$2")).replace(/(\d{4})(\d)/,"$1-$2")};
       
     </script>
   </body>
