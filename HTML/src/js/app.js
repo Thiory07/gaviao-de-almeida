@@ -111,7 +111,7 @@ function anchorLinkHandler(e) {
 }
 
 const linksToAnchors = document.querySelectorAll('a[href="#contato"]');
-console.log(linksToAnchors);
+
 linksToAnchors.forEach(each => (each.onclick = anchorLinkHandler));
 
 // it could probably work in two dimensions too... that'd be kinda cool.
@@ -132,4 +132,17 @@ for (var i = 0; i < inputs.length; i++) {
          e.target.classList.remove('error');
       }
    });
+   inputs[i].addEventListener('focus', (e) => {
+    document.querySelector(".form-info").classList.remove('active');
+   });
 }
+document.querySelector(".form-info-ico").addEventListener("click", (e) =>{
+  console.log(document.querySelector(".form-info"));
+  if(document.querySelector(".form-info").classList.contains('active')){
+    document.querySelector(".form-info").classList.remove('active');
+  }else{
+    document.querySelector(".form-info").classList.add('active');
+  }
+});
+
+
