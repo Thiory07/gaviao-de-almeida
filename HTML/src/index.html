@@ -5,7 +5,8 @@
     <title>Gavião de almeida | Sociedade de Advogados</title>
     <meta name="viewport" content="width=device-width">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+
     <link href="https://unpkg.com/basscss@7.1.1/css/basscss.min.css" rel="stylesheet">
     <style >
       @-ms-viewport{
@@ -28,6 +29,20 @@
       	background-color: #030026;
         text-align: center;
        }
+
+
+			@media (min-width: 40em){
+				.sm-col-6:nth-child(3){clear: left;}
+			}
+ 			@media (min-width: 52em){
+				.md-col-4:nth-child(4){clear: left;}
+				.sm-col-6:nth-child(3){clear: none;}
+			}
+
+			@media (min-width: 64em){
+				.md-col-6:nth-child(3){clear: none;}
+				.sm-col-4:nth-child(4){clear: none;}
+			}
       .logo-link img{
 				height: 150px;
 				padding: 16px 0;
@@ -99,9 +114,7 @@
       width:100%;
       position:absolute;
       }
-      .md-col-4:nth-child(4){
-       clear: left;
-      }
+      
       .padding-8{
       padding-left: 16px;
       padding-right: 16px;
@@ -191,8 +204,22 @@ input:focus + label {
 .required{
 	font-size: .5rem;
 	vertical-align: top;
-}
 
+}
+button{
+	border: none;
+  color: white;
+  background-color: transparent;
+  float: right;
+  font-size: 18px;
+  padding: 16px;
+  opacity: .9;
+  transition: .2 all ease;
+}
+button:hover{
+	cursor: pointer;
+	opacity: 1;
+}
 /*Loading spinner*/
 .lds-ellipsis {
   display: inline-block;
@@ -291,7 +318,7 @@ input:focus + label {
       <section id="home" class="content">
         <div class="padding-8">
           <p>
-            <img loading="lazy" src="lib/Escritorio_Gaviao_de_Almeida.jpg" alt="Foto do Escritório Gavião de Almeida e seus funcionários">
+            <img loading="lazy" src="lib/Escritorio_Gaviao_de_Almeida.jpg" width="1152" height="614" alt="Foto do Escritório Gavião de Almeida e seus funcionários">
           </p>
           <h1>Conheça a Sociedade de Advogados Gavião de Almeida</h1>
         </div>
@@ -349,9 +376,9 @@ input:focus + label {
       <div class="col md-col-6">
       	<div class="content">
 	    	<h2 class="h3">Agende sua consulta</h2>
-
-				<p><a href="tel:1127095960">(11) 2709-5960</a></p>
-				<p><a href="mail:contato@gaviaodealmeidaadv.com">contato@gaviaodealmeidaadv.com</a></p>
+				<p><a href="https://api.whatsapp.com/send?phone=5511994794303"><i class="fab fa-whatsapp"></i> (11) 99479-4303</a></p>
+				<p><a href="tel:1127095960"><i class="fas fa-phone"></i> (11) 2709-5960</a></p>
+				<p><a href="mail:contato@gaviaodealmeidaadv.com"><i class="far fa-envelope"></i> contato@gaviaodealmeidaadv.com</a></p>
 			</div>
       </div>
       <!-- /Contato --></div>
@@ -417,5 +444,8 @@ input:focus + label {
     <div class="loading-screen disabled">
     <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
     </div>
+   <a target="_blank" href="https://api.whatsapp.com/send?phone=5511994794303&amp;text=Text+padr%C3%A3o" id="whatsapp-button" style="position:fixed; bottom:10px; right:10px"><img style="width:50px" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MTIgNTEyOyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSIgd2lkdGg9IjUxMnB4IiBoZWlnaHQ9IjUxMnB4Ij4KPHBhdGggc3R5bGU9ImZpbGw6I0VERURFRDsiIGQ9Ik0wLDUxMmwzNS4zMS0xMjhDMTIuMzU5LDM0NC4yNzYsMCwzMDAuMTM4LDAsMjU0LjIzNEMwLDExNC43NTksMTE0Ljc1OSwwLDI1NS4xMTcsMCAgUzUxMiwxMTQuNzU5LDUxMiwyNTQuMjM0UzM5NS40NzYsNTEyLDI1NS4xMTcsNTEyYy00NC4xMzgsMC04Ni41MS0xNC4xMjQtMTI0LjQ2OS0zNS4zMUwwLDUxMnoiLz4KPHBhdGggc3R5bGU9ImZpbGw6IzU1Q0Q2QzsiIGQ9Ik0xMzcuNzEsNDMwLjc4Nmw3Ljk0NSw0LjQxNGMzMi42NjIsMjAuMzAzLDcwLjYyMSwzMi42NjIsMTEwLjM0NSwzMi42NjIgIGMxMTUuNjQxLDAsMjExLjg2Mi05Ni4yMjEsMjExLjg2Mi0yMTMuNjI4UzM3MS42NDEsNDQuMTM4LDI1NS4xMTcsNDQuMTM4UzQ0LjEzOCwxMzcuNzEsNDQuMTM4LDI1NC4yMzQgIGMwLDQwLjYwNywxMS40NzYsODAuMzMxLDMyLjY2MiwxMTMuODc2bDUuMjk3LDcuOTQ1bC0yMC4zMDMsNzQuMTUyTDEzNy43MSw0MzAuNzg2eiIvPgo8cGF0aCBzdHlsZT0iZmlsbDojRkVGRUZFOyIgZD0iTTE4Ny4xNDUsMTM1Ljk0NWwtMTYuNzcyLTAuODgzYy01LjI5NywwLTEwLjU5MywxLjc2Ni0xNC4xMjQsNS4yOTcgIGMtNy45NDUsNy4wNjItMjEuMTg2LDIwLjMwMy0yNC43MTcsMzcuOTU5Yy02LjE3OSwyNi40ODMsMy41MzEsNTguMjYyLDI2LjQ4Myw5MC4wNDFzNjcuMDksODIuOTc5LDE0NC43NzIsMTA1LjA0OCAgYzI0LjcxNyw3LjA2Miw0NC4xMzgsMi42NDgsNjAuMDI4LTcuMDYyYzEyLjM1OS03Ljk0NSwyMC4zMDMtMjAuMzAzLDIyLjk1Mi0zMy41NDVsMi42NDgtMTIuMzU5ICBjMC44ODMtMy41MzEtMC44ODMtNy45NDUtNC40MTQtOS43MWwtNTUuNjE0LTI1LjZjLTMuNTMxLTEuNzY2LTcuOTQ1LTAuODgzLTEwLjU5MywyLjY0OGwtMjIuMDY5LDI4LjI0OCAgYy0xLjc2NiwxLjc2Ni00LjQxNCwyLjY0OC03LjA2MiwxLjc2NmMtMTUuMDA3LTUuMjk3LTY1LjMyNC0yNi40ODMtOTIuNjktNzkuNDQ4Yy0wLjg4My0yLjY0OC0wLjg4My01LjI5NywwLjg4My03LjA2MiAgbDIxLjE4Ni0yMy44MzRjMS43NjYtMi42NDgsMi42NDgtNi4xNzksMS43NjYtOC44MjhsLTI1LjYtNTcuMzc5QzE5My4zMjQsMTM4LjU5MywxOTAuNjc2LDEzNS45NDUsMTg3LjE0NSwxMzUuOTQ1Ii8+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo="></a>
+
+
   </body>
 </html>
