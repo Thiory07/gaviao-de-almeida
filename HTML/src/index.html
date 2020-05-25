@@ -14,15 +14,14 @@
   <body>
     <header>
     	<div class="padding-8">
-      	<a href="#home" class="logo-link"><img loading="lazy" src="lib/Gaviao_de_almeida_l.png" alt="logo da Gavião de Almeida sociedade de advogados" width="391" height="150"></a>
+      	<a data-href='#index' href="index.html" class="logo-link"><img loading="lazy" src="lib/Gaviao_de_almeida_l.png" alt="logo da Gavião de Almeida sociedade de advogados" width="391" height="150"></a>
       </div>
     </header>
     <nav id="main-menu" class="content">
       <ul class="m" itemscope itemtype="https://schema.org/SiteNavigationElement" role="menu">
-        <li class="m-item" itemprop="name" role="menuitem"><a href="#sobre" class="m-link" itemprop="url" title="Sobre nós">Sobre</a>
+        <li class="m-item" itemprop="name" role="menuitem"><a data-href='#sobre' href="sobre.html" class="m-link" itemprop="url" title="Sobre nós">Sobre</a>
         <li class="m-item" itemprop="name" role="menuitem">
-          <a href="#quem-somos" class="m-link" itemprop="url" title="Quem Somos" >Quem Somos</a>
-          <!-- <li class="m-item" itemprop="name" role="menuitem"><a href="#contato" class="m-link" itemprop="url" title="Contato" >Contato</a> -->
+          <a data-href='#quem-somos' href="quem-somos.html" class="m-link" itemprop="url" title="Quem Somos" >Quem Somos</a>
       </ul>
     </nav>
     <main >
@@ -61,6 +60,7 @@
         <div class="padding-8">
           <h2 class="h3"> Fale Conosco </h2>
           <!-- modify this form HTML and place wherever you want your form -->
+          <p>Preencha o formulário para pode entrar em contato conosco.</p>
 
 					<form action="https://formspree.io/xdowavgd" method="POST">
 						<div class="field">
@@ -88,21 +88,27 @@
       <div class="col md-col-6">
       	<div class="content">
 	    	<h2 class="h3">Agende sua consulta</h2>
-				<p><a class="py1 block" href="https://api.whatsapp.com/send?phone=5511994794303"><i class="fab fa-whatsapp"></i> (11) 99479-4303</a></p>
-				<p><a class="py1 block" href="tel:1127095960"><i class="fas fa-phone"></i> (11) 2709-5960</a></p>
-				<p><a class="py1 block" href="mail:contato@gaviaodealmeidaadv.com"><i class="far fa-envelope"></i> contato@gaviaodealmeidaadv.com</a></p>
+				<p><a class="py1 block" href="https://api.whatsapp.com/send?phone=5511994794303" target="_blank"><i class="fab fa-whatsapp"></i> (11) 99479-4303</a></p>
+				<p><a class="py1 block" href="tel:1127095960" target="_blank"><i class="fas fa-phone"></i> (11) 2709-5960</a></p>
+				<p><a class="py1 block" href="mail:contato@gaviaodealmeidaadv.com" target="_blank"><i class="far fa-envelope"></i> contato@gaviaodealmeidaadv.com</a></p>
 			</div>
       </div>
       <!-- /Contato --></div>
     	</div>
     	
     </footer>
-    <script type="text/javascript" src="js/app.js"></script>
+    
     <div class="loading-screen disabled">
     <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
     </div>
    <a target="_blank" href="https://api.whatsapp.com/send?phone=5511994794303&amp;text=Text+padr%C3%A3o" id="whatsapp-button" style="max-width:50px; max-height:50px;position:fixed; bottom:10px; right:10px"><img width="50" height="50" src="lib/whats.svg"></a>
 
+<div class="mobile-ctas">
+	<a href="#contato"> Contrate nossos serviços <br><i class="fal fa-comments"></i></a>
+	<a href="https://api.whatsapp.com/send?phone=5511994794303" target="_blank">Chame no Whatsapp<br> <i class="fab fa-whatsapp"></i></a>
 
+</div>
+
+<script type="text/javascript" src="js/app.js"></script>
   </body>
 </html>

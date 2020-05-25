@@ -18,7 +18,7 @@ document.addEventListener('scroll', (e) => {
   // or for modern browsers
 }, {capture: false,passive: true});
 
-navButtons = document.querySelectorAll("a[href*='#']");
+navButtons = document.querySelectorAll("a[data-href]");
 for (let i = 0; i < navButtons.length; i++) {
   navButtons[i].addEventListener('click', function(e) {
     e.preventDefault();
@@ -27,7 +27,7 @@ for (let i = 0; i < navButtons.length; i++) {
       sections[i].classList.add('hide');
     }
     let target = e.target;
-    let href = (target.getAttribute('href')) ? target.getAttribute('href') : target.closest('a').getAttribute('href');
+    let href = (target.getAttribute('data-href')) ? target.getAttribute('data-href') : target.closest('a').getAttribute('data-href');
     let sectionDOM = document.querySelector(href);
 
     if (sectionDOM) {
@@ -36,6 +36,11 @@ for (let i = 0; i < navButtons.length; i++) {
       history.pushState({
         page: url.replace('home','index')
       }, "title 1", url.replace("chunks/", "").replace('home','index'));
+      window.scroll({
+ top: 0, 
+ left: 0, 
+ behavior: 'smooth' 
+});
     } else {
 
       let url = 'chunks/' + href.replace("#", "") + '.html';
@@ -46,7 +51,12 @@ for (let i = 0; i < navButtons.length; i++) {
 
       client.open('GET', url);
       client.send();
-      document.querySelector('.loading-screen').classList.remove('disabled')
+      document.querySelector('.loading-screen').classList.remove('disabled');
+      window.scroll({
+ top: 0, 
+ left: 0, 
+ behavior: 'smooth' 
+});
     }
     return false;
   });
@@ -65,13 +75,61 @@ client.addEventListener("load", function(e) {
 });
 
 window.onpopstate = function(event) {
-   console.log(event.state);
-  
-  var id = event.state.page.replace('chunks/',"").replace(".html","");
-  let sections = document.querySelectorAll('section');
-    for (let i = 0; i < sections.length; i++) {
-    sections[i].classList.add('hide');
+  console.log(event.state);
+  if ( event.state ) {
+    var id = event.state.page.replace('chunks/',"").replace(".html","");
+    let sections = document.querySelectorAll('section');
+      for (let i = 0; i < sections.length; i++) {
+      sections[i].classList.add('hide');
+    }
+    id = id.includes('index') ? 'home' : id;
+    document.querySelector('#'+id).classList.remove('hide');
   }
-  id = id.includes('index') ? 'home' : id;
-  document.querySelector('#'+id).classList.remove('hide');
 };
+
+
+function anchorLinkHandler(e) {
+    const distanceToTop = el => Math.floor(el.getBoundingClientRect().top);
+
+    e.preventDefault();
+    const targetID = this.getAttribute("href");
+    const targetAnchor = document.querySelector(targetID);
+    if (!targetAnchor) return;
+    const originalTop = distanceToTop(targetAnchor);
+
+    window.scrollBy({ top: originalTop, left: 0, behavior: "smooth" });
+
+    const checkIfDone = setInterval(function() {
+        const atBottom = window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 2;
+        if (distanceToTop(targetAnchor) === 0 || atBottom) {
+            targetAnchor.tabIndex = "-1";
+            targetAnchor.focus();
+            window.history.pushState("", "", targetID);
+            clearInterval(checkIfDone);
+        }
+    }, 100);
+}
+
+const linksToAnchors = document.querySelectorAll('a[href="#contato"]');
+console.log(linksToAnchors);
+linksToAnchors.forEach(each => (each.onclick = anchorLinkHandler));
+
+// it could probably work in two dimensions too... that'd be kinda cool.
+
+var form =document.querySelector('#contato');
+var inputs = form.querySelectorAll('input');
+for (var i = 0; i < inputs.length; i++) {
+   inputs[i].addEventListener('blur', (e) => {
+      console.log(e.target.validity);
+      if (!e.target.validity.valid){
+         e.target.classList.add('error');
+      }else{
+         e.target.classList.remove('error');
+      }
+   });
+   inputs[i].addEventListener('keyup', (e) => {
+      if (!e.target.validity.valid){
+         e.target.classList.remove('error');
+      }
+   });
+}

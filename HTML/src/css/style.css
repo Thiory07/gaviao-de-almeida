@@ -17,25 +17,14 @@
       body, h1, h2, h3, h4, h5, h6{
       font-family: "Open Sans", sans-serif;
       }
-      footer{padding-bottom: 100px;}
+      footer{padding-bottom: 200px;}
       header{
       	background-color: #030026;
         text-align: center;
        }
 
 
-			@media (min-width: 40em){
-				.sm-col-6:nth-child(3){clear: left;}
-			}
- 			@media (min-width: 52em){
-				.md-col-4:nth-child(4){clear: left;}
-				.sm-col-6:nth-child(3){clear: none;}
-			}
 
-			@media (min-width: 64em){
-				.md-col-6:nth-child(3){clear: none;}
-				.sm-col-4:nth-child(4){clear: none;}
-			}
       .logo-link img{
 				height: 150px;
 				padding: 16px 0;
@@ -116,7 +105,9 @@
      /**
 * Make the field a flex-container, reverse the order so label is on top.
 */
- 
+ .error{
+  border-color: #f00;
+ }
 .field {
   display: flex;
   flex-flow: column-reverse;
@@ -294,4 +285,49 @@ footer a:hover{opacity: 1}
 .loading-screen.disabled{ 
 	z-index: -1;
 	opacity: 0;
-	}
+}
+
+
+/*mobile ctas*/
+.mobile-ctas {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    display: flex;
+    background: #030026;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 2px;
+}
+.mobile-ctas:after{
+  content: "";
+  width: 1px;
+  display: block;
+  height: 100%;
+  position: absolute;
+  left: calc(50% - 1px);
+  top: 0;
+  background-color: #fff;
+}
+.mobile-ctas a{
+  color: #fff;
+  box-sizing: border-box;
+  padding: 10px;
+  width: calc( 50% - 2px );
+
+}
+@media (min-width: 40em){
+  .sm-col-6:nth-child(3){clear: left;}
+}
+@media (min-width: 52em){
+  .md-col-4:nth-child(4){clear: left;}
+  .sm-col-6:nth-child(3){clear: none;}
+}
+
+@media (min-width: 64em){
+  .mobile-ctas { display: none; }
+  .md-col-6:nth-child(3){clear: none;}
+  .sm-col-4:nth-child(4){clear: none;}
+}
