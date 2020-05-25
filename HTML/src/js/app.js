@@ -39,7 +39,7 @@ for (let i = 0; i < navButtons.length; i++) {
     } else {
 
       let url = 'chunks/' + href.replace("#", "") + '.html';
-      console.log(url);
+      url = url.replace('home', 'index');
       history.pushState({
         page: url.replace('home','index')
       }, "title 1", url.replace("chunks/", "").replace('home','index'));
