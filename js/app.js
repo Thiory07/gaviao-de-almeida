@@ -1,5 +1,6 @@
 // setup page
 let mainMenu = document.querySelector("#main-menu"),
+
 stickyMenu = mainMenu.cloneNode(true);
 stickyMenu.id = "sticky";
 stickyMenu.classList.remove('content');
