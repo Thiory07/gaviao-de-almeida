@@ -1,7 +1,19 @@
 <!DOCTYPE html>
 <html lang="pt-br">
   <head>
-<!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=UA-170114114-1"></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'UA-170114114-1');document.addEventListener('submit', function(e) { gtag('event', 'enviar', {'event_category': 'form'}); });</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-170114114-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+    gtag('config', 'UA-170114114-1');
+    document.addEventListener('submit', function(e) { 
+      gtag('event', 'enviar', {'event_category': 'form'}); 
+    });
+    window.addEventListener('DOMContentLoaded', (event) => {
+      document.querySelector("#whatsbtn").addEventListener("click", function(e) {
+        gtag('event', 'click', {'event_category': 'botão', 'event_label': 'whats'}); 
+      });
+    });
+    </script>
     <meta charset="UTF-8">
     <title>Gavião de almeida | Sociedade de Advogados</title>
     <meta name="viewport" content="width=device-width">
@@ -122,7 +134,7 @@
       <div class="col md-col-6">
       	<div class="content">
 	    	<h2 class="h3">Agende sua consulta</h2>
-				<p><a class="py1 block" href="https://api.whatsapp.com/send?phone=5511994794303" target="_blank"><i class="fab fa-whatsapp"></i> (11) 99479-4303</a></p>
+				<p><a id="whatsbtn" class="py1 block" href="https://api.whatsapp.com/send?phone=5511994794303" target="_blank"><i class="fab fa-whatsapp"></i> (11) 99479-4303</a></p>
 				<p><a class="py1 block" href="tel:1127095960" target="_blank"><i class="fas fa-phone"></i> (11) 2709-5960</a></p>
 				<p><a class="py1 block" href="mail:contato@gaviaodealmeidaadv.com" target="_blank"><i class="far fa-envelope"></i> contato@gaviaodealmeidaadv.com</a></p>
 			</div>
