@@ -8,9 +8,13 @@
     document.addEventListener('submit', function(e) { 
       gtag('event', 'enviar', {'event_category': 'form'}); 
     });
+    
     window.addEventListener('DOMContentLoaded', (event) => {
-      document.querySelector("#whatsbtn").addEventListener("click", function(e) {
-        gtag('event', 'click', {'event_category': 'botão', 'event_label': 'whats'}); 
+      let whatsBtns = [ '#whatsbtn','#whatsbtn2','#whatsbtn3'];
+      whatsBtns.forEach( (el,i) => {
+        el.addEventListener("click", function(e) {
+          gtag('event', 'click', {'event_category': 'botão', 'event_label': 'whats'}); 
+        });
       });
     });
     </script>
@@ -117,11 +121,11 @@
     <div class="loading-screen disabled">
     <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
     </div>
-   <a target="_blank" href="https://api.whatsapp.com/send?phone=5511994794303&amp;text=Text+padr%C3%A3o" id="whatsapp-button" style="max-width:50px; max-height:50px;position:fixed; bottom:10px; right:10px"><img width="50" height="50" src="lib/whats.svg"></a>
+   <a id="whatsbtn2" target="_blank" href="https://api.whatsapp.com/send?phone=5511994794303&amp;text=Text+padr%C3%A3o" id="whatsapp-button" style="max-width:50px; max-height:50px;position:fixed; bottom:10px; right:10px"><img width="50" height="50" src="lib/whats.svg"></a>
 
 <div class="mobile-ctas">
 	<a href="#contato"> Contrate nossos serviços <br><i class="fal fa-comments"></i></a>
-	<a href="https://api.whatsapp.com/send?phone=5511994794303" target="_blank">Chame no Whatsapp<br> <i class="fab fa-whatsapp"></i></a>
+	<a id="whatsbtn3" href="https://api.whatsapp.com/send?phone=5511994794303" target="_blank">Chame no Whatsapp<br> <i class="fab fa-whatsapp"></i></a>
 
 </div>
 
