@@ -12,7 +12,7 @@
     window.addEventListener('DOMContentLoaded', (event) => {
       let whatsBtns = [ '#whatsbtn','#whatsbtn2','#whatsbtn3'];
       whatsBtns.forEach( (el,i) => {
-        el.addEventListener("click", function(e) {
+        document.querySelector(el).addEventListener("click", function(e) {
           gtag('event', 'click', {'event_category': 'botão', 'event_label': 'whats'}); 
         });
       });
