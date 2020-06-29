@@ -22,11 +22,8 @@
       	background-color: #030026;
         text-align: center;
        }
-
-
-
       .logo-link img{
-				height: 150px;
+				max-height: 100px;
 				padding: 16px 0;
       }
       .content{
