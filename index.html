@@ -36,7 +36,7 @@
     gtag('config', 'UA-170114114-1');
     gtag('config', 'G-NN93ZVWLCV');
     document.addEventListener('submit', function(e) { 
-      gtag('event', 'enviar', {'event_category': 'form'});
+      gtag('event', 'enviar', {'event_category': 'form', 'send_to': 'UA-170114114-1'});
       gtag('event', 'form', {});
     });
     
@@ -44,7 +44,7 @@
       let whatsBtns = [ '#whatsbtn','#whatsbtn2','#whatsbtn3'];
       whatsBtns.forEach( (el,i) => {
         document.querySelector(el).addEventListener("click", function(e) {
-          gtag('event', 'click', {'event_category': 'botão', 'event_label': 'whats'}); 
+          gtag('event', 'click', {'event_category': 'botão', 'event_label': 'whats','send_to': 'UA-170114114-1'}); 
         });
       });
     });
